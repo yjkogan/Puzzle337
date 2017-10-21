@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geomap'],
+        'mapsApiKey': 'AIzaSyCDB45ZVFNENiV2bUO92tzHO095stqd7F8'
+      });
+      google.charts.setOnLoadCallback(drawMap);
+
+      function drawMap() {
+        var generated_array = [['Country', 'Count'], ['Bolivia', '38'], ['India', '22'], ['Zimbabwe', '16'], ['South Africa', '11'], ['Norway', '8'], ['Switzerland', '4'], ['Singapore', '4'], ['Belgium', '3'], ['Bosnia and Herzegovina', '3'], ['Burundi', '3'], ['Comoros', '3'], ['Ecuador', '3'], ['Equatorial Guinea', '3'], ['Fiji', '3'], ['Luxembourg', '3'], ['New Zealand', '3'], ['Papua New Guinea', '3'], ['Rwanda', '3'], ['Seychelles', '3'], ['Vanuatu', '3'], ['Afghanistan', '2'], ['Canada', '2'], ['Finland', '2'], ['Palau', '2'], ['Philippines', '2'], ['Sri Lanka', '2'], ['Austria', '1'], ['Brazil', '1'], ['Denmark', '1'], ['Micronesia', '1'], ['Italy', '1'], ['Netherlands', '1'], ['Peru', '1'], ['Russia', '1'], ['USA', '1'], ['China', '1'], ['Poland', '1'], ['Slovenia', '1'], ['Spain', '1'], ['Argentina', '0'], ['Mexico', '0'], ['United Kingdom', '0']];
+        var data = google.visualization.arrayToDataTable(generated_array);
+
+        var options = {showLegend: false};
+        options['dataMode'] = 'markers';
+
+        var container = document.getElementById('regions_div');
+        var geomap = new google.visualization.GeoMap(container);
+
+        google.visualization.events.addListener(geomap, 'error', function() {
+          console.debug('Error!', arguments);
+        });
+
+        google.visualization.events.addListener(geomap, 'drawingDone', function() {
+          var loadingContainer = document.getElementById('Loading-info');
+          console.debug(loadingContainer);
+          loadingContainer.style.display = "none";
+        });
+
+        geomap.draw(data, options);
+      };
+    </script>
+  </head>
+  <body>
+    <div>Norway, Canada (9)</div>
+    <div id='Loading-info'>Loading map...</div>
+    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+[['Country', 'Feature'], ['2. Fiji', '-1'], ['3. Philippines', '-1'], ['Samoa', '4'], ['Nicaragua', '4'], ['1. Panama (1)', '-1'], ['Cambodia', '2'], ['Palau', '2'], ['Brazil', '2'], ['Kenya', '1'], ['Gabon', '1'], ['Malaysia', '1'], ['Thailand', '1'], ['China', '1'], ['Australia', '1'], ['France', '1'], ['Vanuatu', '1'], ['Guatemala', '1'], ['New Zealand', '1']]

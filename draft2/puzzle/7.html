@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geomap'],
+        'mapsApiKey': 'AIzaSyDzevghJT_Wy7hwZzy5IB5bKfUBe6k14yI'
+      });
+      google.charts.setOnLoadCallback(drawMap);
+
+      function drawMap() {
+        var generated_array = [['Country', 'Count'], ['Argentina', '1'], ['Australia', '2'], ['Austria', '1'], ['Belgium', '1'], ['Brazil', '1'], ['Chile', '1'], ['China', '2'], ['Denmark', '2'], ['France', '6'], ['Germany', '2'], ['Italy', '?'], ['Japan', '2'], ['Mexico', '2'], ['Netherlands', '1'], ['Peru', '3'], ['Russia', '1'], ['Singapore', '1'], ['Spain', '?'], ['Thailand', '2'], ['United Kingdom', '3'], ['United States', '6']];
+        var data = google.visualization.arrayToDataTable(generated_array);
+
+        var options = {showLegend: false};
+        options['dataMode'] = 'markers';
+
+        var container = document.getElementById('regions_div');
+        var geomap = new google.visualization.GeoMap(container);
+
+        google.visualization.events.addListener(geomap, 'error', function() {
+          console.debug('Error!', arguments);
+        });
+
+        google.visualization.events.addListener(geomap, 'drawingDone', function() {
+          var loadingContainer = document.getElementById('Loading-info');
+          console.debug(loadingContainer);
+          loadingContainer.style.display = "none";
+        });
+
+        geomap.draw(data, options);
+      };
+    </script>
+  </head>
+  <body>
+    <div>Spain, Italy (7)</div>
+    <div id='Loading-info'>Loading map...</div>
+    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

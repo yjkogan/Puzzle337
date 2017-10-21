@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      /* Safari 4.0 - 8.0 */
+      @-webkit-keyframes textcolorred {
+          from {color: black;}
+          to {color: red;}
+      }
+      
+      /* Standard syntax */
+      @keyframes textcolorred {
+          from {color: black;}
+          to {color: red;}
+      }
+
+      #Loading-info {
+        -webkit-animation-name: textcolorred; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+        -webkit-animation-iteration-count:infinite;
+        animation-name: textcolorred;
+        animation-duration: 1s;
+        animation-iteration-count:infinite;
+      }
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geomap'],
+        'mapsApiKey': 'AIzaSyDGWjCK3Q6MLTfnMinDULYkSUXTn5D8GR4'
+      });
+      google.charts.setOnLoadCallback(drawMap);
+
+      function drawMap() {
+        var generated_array = [['Country', 'Count'], ['Afghanistan', 71], ['Albania', 62], ['Algeria', 55], ['Andorra', 24], ['Angola', 41], ['Antigua and Barbuda', 36], ['Argentina', 72], ['Armenia', 25], ['Australia', 72], ['Austria', 62], ['Azerbaijan', 25], ['Bahrain', 46], ['Bangladesh', 43], ['Barbados', 51], ['Belarus', 72], ['Belgium', 72], ['Belize', 36], ['Benin', 57], ['Bhutan', 46], ['Bolivia', 72], ['Bosnia and Herzegovina', 25], ['Botswana', 51], ['Brazil', 72], ['Brunei', 33], ['Bulgaria', 62], ['Burkina Faso', 57], ['Burundi', 55], ['Cameroon', 57], ['Canada', 72], ['Cape Verde', 42], ['Central African Republic', 57], ['Chad', 57], ['Chile', 72], ['China', 72], ['Colombia', 72], ['Comoros', 42], ['Costa Rica', 72], ['Croatia', 25], ['Cuba', 72], ['Cyprus', 57], ['Czech Republic', 24], ['Democratic Republic of the Congo', 57], ['Denmark', 72], ['Djibouti', 40], ['Dominica', 39], ['Dominican Republic', 72], ['East Timor', 15], ['Ecuador', 72], ['Egypt', 72], ['El Salvador', 72], ['Equatorial Guinea', 49], ['Eritrea', 24], ['Estonia', 26], ['Ethiopia', 72], ['Federated States of Micronesia', 26], ['Fiji', 47], ['Finland', 62], ['France', 72], ['Gabon', 57], ['Georgia (country)', 25], ['Germany', 44], ['Ghana', 60], ['Greece', 72], ['Grenada', 43], ['Guatemala', 72], ['Guinea', 59], ['Guinea-Bissau', 43], ['Guyana', 51], ['Haiti', 72], ['Honduras', 72], ['Hungary', 62], ['Iceland', 71], ['India', 72], ['Indonesia', 67], ['Iran', 72], ['Iraq', 72], ['Israel', 68], ['Italy', 62], ['Ivory Coast', 57], ['Jamaica', 55], ['Japan', 61], ['Jordan', 62], ['Kazakhstan', 25], ['Kenya', 54], ['Kingdom of the Netherlands', 72], ['Kiribati', 18], ['Kuwait', 54], ['Kyrgyzstan', 25], ['Laos', 62], ['Latvia', 26], ['Lebanon', 72], ['Lesotho', 51], ['Liberia', 72], ['Libya', 62], ['Liechtenstein', 27], ['Lithuania', 26], ['Luxembourg', 72], ['Madagascar', 57], ['Malawi', 53], ['Malaysia', 60], ['Maldives', 52], ['Mali', 57], ['Malta', 53], ['Marshall Islands', 26], ['Mauritania', 56], ['Mauritius', 49], ['Mexico', 72], ['Moldova', 25], ['Monaco', 24], ['Mongolia', 56], ['Montenegro', 11], ['Morocco', 61], ['Mozambique', 42], ['Myanmar', 69], ['Namibia', 27], ['Nauru', 18], ['Nepal', 62], ['New Zealand', 72], ['Nicaragua', 72], ['Niger', 57], ['Nigeria', 57], ['North Korea', 26], ['Norway', 72], ['Oman', 46], ['Pakistan', 70], ['Palau', 23], ['Panama', 72], ['Papua New Guinea', 42], ['Paraguay', 72], ['Peru', 72], ['Philippines', 72], ['Poland', 72], ['Portugal', 62], ['Qatar', 46], ['Republic of Ireland', 62], ['Republic of Macedonia', 24], ['Republic of the Congo', 57], ['Romania', 62], ['Russia', 72], ['Rwanda', 55], ['Saint Kitts and Nevis', 34], ['Saint Lucia', 38], ['Saint Vincent and the Grenadines', 37], ['Samoa', 41], ['San Marino', 25], ['S\xc3\xa3o Tom\xc3\xa9 and Pr\xc3\xadncipe', 42], ['Saudi Arabia', 72], ['Senegal', 57], ['Serbia', 17], ['Seychelles', 41], ['Sierra Leone', 56], ['Singapore', 52], ['Slovakia', 24], ['Slovenia', 25], ['Solomon Islands', 39], ['Somalia', 57], ['South Africa', 72], ['South Korea', 26], ['South Sudan', 6], ['Spain', 62], ['Sri Lanka', 62], ['Sudan', 61], ['Suriname', 42], ['Swaziland', 49], ['Sweden', 71], ['Switzerland', 15], ['Syria', 72], ['Tajikistan', 25], ['Tanzania', 56], ['Thailand', 71], ['The Bahamas', 44], ['The Gambia', 52], ['Togo', 57], ['Tonga', 18], ['Trinidad and Tobago', 55], ['Tunisia', 61], ['Turkey', 72], ['Turkmenistan', 25], ['Tuvalu', 17], ['Uganda', 55], ['Ukraine', 72], ['United Arab Emirates', 46], ['United Kingdom', 72], ['United States', 72], ['Uruguay', 72], ['Uzbekistan', 25], ['Vanuatu', 36], ['Venezuela', 72], ['Vietnam', 40], ['Yemen', 70], ['Zambia', 53], ['Zimbabwe', 37]];
+        var data = google.visualization.arrayToDataTable(generated_array);
+
+        var options = {
+          displayMode: 'markers',
+          colorAxis: {colors: ['#82ff8c', '#00a80d']},
+          sizeAxis: { minSize: 5, maxSize: 12 }
+        };
+
+        var container = document.getElementById('regions_div');
+        var geomap = new google.visualization.GeoChart(container);
+
+        google.visualization.events.addListener(geomap, 'error', function() {
+          console.debug('Error!', arguments);
+        });
+
+        google.visualization.events.addListener(geomap, 'ready', function() {
+          var loadingContainer = document.getElementById('Loading-info');
+          loadingContainer.style.display = "none";
+        });
+
+        geomap.draw(data, options);
+      };
+    </script>
+  </head>
+  <body>
+    <div>Cambodia (2)</div>
+    <div id='Loading-info'>Loading map...</div>
+    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

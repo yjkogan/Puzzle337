@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geomap'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+      google.charts.setOnLoadCallback(drawMap);
+
+      function drawMap() {
+        var generated_array = [['Country', 'Count'], ['Algeria', '2'], ['Argentina', '?'], ['Australia', '12'], ['Austria', '21'], ['Azerbaijan', '1'], ['Bangladesh', '1'], ['Belarus', '2'], ['Belgium', '10'], ['Bosnia and Herzegovina', '2'], ['Brazil', '1'], ['Bulgaria', '1'], ['Canada', '25'], ['Chile', '2'], ['China', '?'], ['Colombia', '2'], ['Costa Rica', '1'], ['Croatia', '1'], ['Cyprus', '1'], ['Czech Republic', '5'], ['Denmark', '14'], ['East Timor', '2'], ['Egypt', '4'], ['Eritrea', '1'], ['Faroe Islands', '1'], ['Finland', '5'], ['France', '68'], ['Germany', '105'], ['Ghana', '1'], ['Greece', '2'], ['Guatemala', '2'], ['Hong Kong', '1'], ['Hungary', '9'], ['Iceland', '1'], ['India', '7'], ['Iran', '2'], ['Ireland', '7'], ['Israel', '12'], ['Italy', '20'], ['Japan', '24'], ['Kenya', '1'], ['South Korea', '1'], ['Latvia', '1'], ['Liberia', '2'], ['Lithuania', '3'], ['Luxembourg', '2'], ['Macedonia', '1'], ['Mexico', '3'], ['Morocco', '1'], ['Myanmar', '1'], ['Netherlands', '20'], ['New Zealand', '3'], ['Nigeria', '1'], ['Norway', '13'], ['Pakistan', '2'], ['Palestine', '1'], ['Peru', '1'], ['Poland', '15'], ['Portugal', '2'], ['Romania', '4'], ['Russia/ Soviet Union', '26'], ['Saint Lucia', '2'], ['Slovenia', '1'], ['South Africa', '10'], ['Spain', '7'], ['Sweden', '31'], ['Switzerland', '25'], ['Taiwan', '1'], ['Tibet', '1'], ['Trinidad and Tobago', '1'], ['Turkey', '2'], ['Ukraine', '?'], ['United Kingdom', '125'], ['United States', '364'], ['Venezuela', '1'], ['Vietnam', '1'], ['Yemen', '1']];
+        var data = google.visualization.arrayToDataTable(generated_array);
+
+        var options = {showLegend: false};
+        options['dataMode'] = 'markers';
+
+        var container = document.getElementById('regions_div');
+        var geomap = new google.visualization.GeoMap(container);
+
+        geomap.draw(data, options);
+      };
+    </script>
+  </head>
+  <body>
+    <div>Dynamite</div>
+    <div>Argentina, China, Ukraine (1)</div>
+    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+    <head>
+      <meta charset="utf-8" />
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript">
+        google.charts.load('current', {
+          'packages':['geomap'],
+          // Note: you will need to get a mapsApiKey for your project.
+          // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+          'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+        });
+        google.charts.setOnLoadCallback(drawMap);
+  
+        function drawMap() {
+          var generated_array = [
+            ['Country', 'Index', 'Letter'],
+            ['IS', 1, 'I'],
+            ['NO', 1, 'N'],
+            ['IT', 2, 'T'],
+            ['KR', 9, 'E'],
+            ['MA', 3, 'R'],
+            ['PK', 8, 'N'],
+            ['NI', 4, 'A'],
+            ['ET', 2, 'T'],
+            ['LK', 3, 'I'],
+            ['CG', 9, 'O'],
+            ['ID', 2, 'N'],
+            ['PY', 2, 'A'],
+            ['NZ', 7, 'L'],
+          ];
+          var data = google.visualization.arrayToDataTable(generated_array);
+  
+          var options = {showLegend: false};
+          options['dataMode'] = 'regions';
+  
+          var container = document.getElementById('regions_div');
+          var geomap = new google.visualization.GeoMap(container);
+  
+          geomap.draw(data, options);
+        };
+      </script>
+    </head>
+    <body>
+      <div>Solution</div>
+      <div id="regions_div" style="width: 900px; height: 500px;"></div>
+    </body>
+  </html>
+  
