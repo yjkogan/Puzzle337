@@ -32,7 +32,7 @@
       google.charts.setOnLoadCallback(drawMap);
 
       function drawMap() {
-        var generated_array = [['Country', 'Count'], ['Algeria', 2], ['Australia', 12], ['Austria', 21], ['Azerbaijan', 1], ['Bangladesh', 1], ['Belarus', 2], ['Belgium', 10], ['Bosnia and Herzegovina', 2], ['Brazil', 1], ['Bulgaria', 1], ['Canada', 25], ['Chile', 2], ['Colombia', 2], ['Costa Rica', 1], ['Croatia', 1], ['Cyprus', 1], ['Czech Republic', 5], ['Denmark', 14], ['East Timor', 2], ['Egypt', 4], ['Eritrea', 1], ['Faroe Islands', 1], ['Finland', 5], ['France', 68], ['Germany', 105], ['Ghana', 1], ['Greece', 2], ['Guatemala', 2], ['Hong Kong', 1], ['Hungary', 9], ['Iceland', 1], ['India', 7], ['Iran', 2], ['Ireland', 7], ['Israel', 12], ['Italy', 20], ['Japan', 24], ['Kenya', 1], ['Latvia', 1], ['Liberia', 2], ['Lithuania', 3], ['Luxembourg', 2], ['Macedonia', 1], ['Mexico', 3], ['Morocco', 1], ['Myanmar', 1], ['Netherlands', 20], ['New Zealand', 3], ['Nigeria', 1], ['Norway', 13], ['Pakistan', 2], ['Palestine', 1], ['Peru', 1], ['Poland', 15], ['Portugal', 2], ['Romania', 4], ['Russia/ Soviet Union', 26], ['Saint Lucia', 2], ['Slovenia', 1], ['South Africa', 10], ['Spain', 7], ['Sweden', 31], ['Switzerland', 25], ['Taiwan', 1], ['Tibet', 1], ['Trinidad and Tobago', 1], ['Turkey', 2], ['United Kingdom', 125], ['United States', 364], ['Venezuela', 1], ['Vietnam', 1], ['Yemen', 1]];
+        var generated_array = [['Country', 'Count'], ['Algeria', 1], ['Angola', 1], ['Argentina', 7], ['Australia', 33], ['Austria', 8], ['Belgium', 2], ['Brazil', 43], ['Canada', 39], ['Chile', 12], ['China', 319], ['Colombia', 3], ['Cyprus', 6], ['Czech Republic', 6], ['Denmark', 6], ['Egypt', 7], ['Finland', 7], ['France', 38], ['Georgia', 1], ['Germany', 114], ['Greece', 3], ['Guernsey', 1], ['Hong Kong', 67], ['Iceland', 1], ['India', 101], ['Indonesia', 20], ['Ireland', 8], ['Israel', 18], ['Italy', 42], ['Japan', 33], ['Jordan', 1], ['Kuwait', 4], ['Lebanon', 4], ['Liechtenstein', 1], ['Macau', 1], ['Malaysia', 12], ['Mexico', 15], ['Morocco', 3], ['Nepal', 1], ['Netherlands', 10], ['New Zealand', 2], ['Nigeria', 3], ['Norway', 14], ['Oman', 3], ['Peru', 5], ['Philippines', 14], ['Poland', 4], ['Portugal', 4], ['Romania', 1], ['Russia', 96], ['Saudi Arabia', 10], ['Singapore', 21], ['Slovakia', 1], ['South Africa', 8], ['South Korea', 38], ['Spain', 25], ['St. Kitts & Nevis', 2], ['Swaziland', 1], ['Sweden', 31], ['Switzerland', 36], ['Taiwan', 31], ['Tanzania', 1], ['Thailand', 20], ['Turkey', 29], ['Ukraine', 6], ['United Arab Emirates', 5], ['United Kingdom', 54], ['United States', 565], ['Venezuela', 2], ['Vietnam', 2]];
         var data = google.visualization.arrayToDataTable(generated_array);
 
         var options = {
@@ -45,7 +45,6 @@
         var geomap = new google.visualization.GeoChart(container);
 
         google.visualization.events.addListener(geomap, 'error', function(event) {
-          debugger;
           console.log('Error loading:', event.message);
         });
 
@@ -59,7 +58,7 @@
     </script>
   </head>
   <body>
-    <div>Argentina, China, Ukraine (2)</div>
+    <div>Kazakhstan, Monaco (1)</div>
     <div id='Loading-info'>Loading map...</div>
     <div id="regions_div" style="width: 900px; height: 500px;"></div>
   </body>

@@ -45,7 +45,6 @@
         var geomap = new google.visualization.GeoChart(container);
 
         google.visualization.events.addListener(geomap, 'error', function(event) {
-          debugger;
           console.log('Error loading:', event.message);
         });
 

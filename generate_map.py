@@ -56,7 +56,7 @@ if __name__ == '__main__':
   # Answer: Pakistan (+92)
   to_array('data/timezones.csv', './puzzle/9.html', 'United Kingdom, Ecuador', 8, 'AIzaSyD2kUuTMcnK0Vh41G-MMpTDIzV4sk9oTCo')
   # Answer: Paraguay (+595)
-  to_array('data/nobels.csv', './puzzle/10.html', 'Argentina, China, Ukraine', 2, 'AIzaSyCDB45ZVFNENiV2bUO92tzHO095stqd7F8')
+  to_array('data/billionaires.csv', './puzzle/10.html', 'Kazakhstan, Monaco', 1, 'AIzaSyCDB45ZVFNENiV2bUO92tzHO095stqd7F8')
   # Answer: Republic of the Congo (+242)
   to_array('data/worldcup.csv', './puzzle/11.html', 'Argentina, Italy, Uruguay', 9, 'AIzaSyDGWjCK3Q6MLTfnMinDULYkSUXTn5D8GR4')
   # Answer: South Korea (+82)
