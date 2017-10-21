@@ -32,7 +32,7 @@
       google.charts.setOnLoadCallback(drawMap);
 
       function drawMap() {
-        var generated_array = [['Country', 'Count'], ['Bolivia', 38], ['India', 22], ['Zimbabwe', 16], ['South Africa', 11], ['Norway', 8], ['Switzerland', 4], ['Singapore', 4], ['Belgium', 3], ['Bosnia and Herzegovina', 3], ['Burundi', 3], ['Comoros', 3], ['Ecuador', 3], ['Equatorial Guinea', 3], ['Fiji', 3], ['Luxembourg', 3], ['New Zealand', 3], ['Papua New Guinea', 3], ['Rwanda', 3], ['Seychelles', 3], ['Vanuatu', 3], ['Afghanistan', 2], ['Canada', 2], ['Finland', 2], ['Palau', 2], ['Philippines', 2], ['Sri Lanka', 2], ['Austria', 1], ['Brazil', 1], ['Denmark', 1], ['Micronesia', 1], ['Italy', 1], ['Netherlands', 1], ['Peru', 1], ['Russia', 1], ['USA', 1], ['China', 1], ['Poland', 1], ['Slovenia', 1], ['Spain', 1], ['Argentina', 0], ['Mexico', 0], ['United Kingdom', 0]];
+        var generated_array = [['Country', 'Count'], ['Afghanistan', 2], ['Austria', 1], ['Belgium', 3], ['Bolivia', 37], ['Bosnia and Herzegovina', 3], ['Brazil', 1], ['Burundi', 3], ['China', 1], ['Comoros', 3], ['Denmark', 1], ['Ecuador', 3], ['Equatorial Guinea', 3], ['Fiji', 3], ['Finland', 2], ['India', 22], ['Italy', 1], ['Luxembourg', 3], ['Micronesia', 1], ['Netherlands', 1], ['New Zealand', 3], ['Palau', 2], ['Papua New Guinea', 3], ['Peru', 1], ['Philippines', 2], ['Poland', 1], ['Russia', 1], ['Rwanda', 3], ['Seychelles', 3], ['Singapore', 4], ['Slovenia', 1], ['South Africa', 11], ['Spain', 1], ['Sri Lanka', 2], ['Switzerland', 4], ['United States of America', 1], ['Vanuatu', 3], ['Zimbabwe', 16]];
         var data = google.visualization.arrayToDataTable(generated_array);
 
         var options = {
@@ -44,8 +44,9 @@
         var container = document.getElementById('regions_div');
         var geomap = new google.visualization.GeoChart(container);
 
-        google.visualization.events.addListener(geomap, 'error', function() {
-          console.debug('Error!', arguments);
+        google.visualization.events.addListener(geomap, 'error', function(event) {
+          debugger;
+          console.log('Error loading:', event.message);
         });
 
         google.visualization.events.addListener(geomap, 'ready', function() {

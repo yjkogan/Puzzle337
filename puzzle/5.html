@@ -32,7 +32,7 @@
       google.charts.setOnLoadCallback(drawMap);
 
       function drawMap() {
-        var generated_array = [['Country', 'Count'], ['Italy', 14], ['Spain', 4], ['Japan ', 4], ['Sweden ', 3], ['Denmark ', 3], ['Soviet Union', 3], ['Netherlands ', 3], ['Germany ', 2], ['Hungary ', 2], ['Argentina ', 2], ['Czechoslovakia', 2], ['Switzerland', 2], ['Austria', 2], ['Poland ', 1], ['West Germany', 1], ['Canada', 1], ['Russia', 1], ['Algeria', 1], ['Taiwan', 1], ['Czech Republic', 1], ['South Africa', 1], ['Bosnia and Herzegovina', 1], ['Ivory Coast', 1]];
+        var generated_array = [['Country', 'Count'], ['Algeria', 1], ['Argentina ', 2], ['Austria', 2], ['Bosnia and Herzegovina', 1], ['Canada', 1], ['Czech Republic / Czechoslovakia', 3], ['Denmark ', 3], ['Germany / West Germany', 3], ['Hungary ', 2], ['Italy', 14], ['Ivory Coast', 1], ['Japan ', 4], ['Netherlands ', 3], ['Poland ', 1], ['Russia / Soviet Union', 4], ['South Africa', 1], ['Spain', 4], ['Sweden ', 3], ['Switzerland', 2], ['Taiwan', 1]];
         var data = google.visualization.arrayToDataTable(generated_array);
 
         var options = {
@@ -44,8 +44,9 @@
         var container = document.getElementById('regions_div');
         var geomap = new google.visualization.GeoChart(container);
 
-        google.visualization.events.addListener(geomap, 'error', function() {
-          console.debug('Error!', arguments);
+        google.visualization.events.addListener(geomap, 'error', function(event) {
+          debugger;
+          console.log('Error loading:', event.message);
         });
 
         google.visualization.events.addListener(geomap, 'ready', function() {

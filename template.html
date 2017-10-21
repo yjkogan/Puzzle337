@@ -44,8 +44,8 @@
         var container = document.getElementById('regions_div');
         var geomap = new google.visualization.GeoChart(container);
 
-        google.visualization.events.addListener(geomap, 'error', function() {
-          console.debug('Error!', arguments);
+        google.visualization.events.addListener(geomap, 'error', function(event) {
+          console.log('Error loading:', event.message);
         });
 
         google.visualization.events.addListener(geomap, 'ready', function() {

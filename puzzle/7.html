@@ -32,7 +32,7 @@
       google.charts.setOnLoadCallback(drawMap);
 
       function drawMap() {
-        var generated_array = [['Country', 'Count'], ['Pakistan', 42], ['Nepal', 32], ['India', 27], ['Afghanistan', 1], ['Kyrgyzstan', 1], ['Tajikistan', 1]];
+        var generated_array = [['Country', 'Count'], ['Afghanistan', 1], ['India', 27], ['Kyrgyzstan', 1], ['Nepal', 32], ['Pakistan', 42], ['Tajikistan', 1]];
         var data = google.visualization.arrayToDataTable(generated_array);
 
         var options = {
@@ -44,8 +44,9 @@
         var container = document.getElementById('regions_div');
         var geomap = new google.visualization.GeoChart(container);
 
-        google.visualization.events.addListener(geomap, 'error', function() {
-          console.debug('Error!', arguments);
+        google.visualization.events.addListener(geomap, 'error', function(event) {
+          debugger;
+          console.log('Error loading:', event.message);
         });
 
         google.visualization.events.addListener(geomap, 'ready', function() {

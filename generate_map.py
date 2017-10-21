@@ -18,8 +18,10 @@ def to_array(in_file, out_file, order, index, apikey):
         continue
       else:
         try:
-          split = [split[0], int(split[1])]
-          arr.append(split)
+          data_point = [split[0], int(split[1])]
+          if len(split) == 3:
+            data_point.append(split[2])
+          arr.append(data_point)
         except ValueError:
           continue
   
@@ -36,12 +38,12 @@ def to_array(in_file, out_file, order, index, apikey):
 
 if __name__ == '__main__':
   # Answer: Ethiopia (+251)
-  to_array('data/astronauts.csv', './puzzle/1.html', 'Germany, US', 2, 'AIzaSyD7L4w39LZ22obci_jIoZ5iT-DoccCtrw8')
+  to_array('data/astronauts.csv', './puzzle/1.html', 'Germany, United States', 2, 'AIzaSyD7L4w39LZ22obci_jIoZ5iT-DoccCtrw8')
   # Answer: Iceland (+354)
   to_array('data/survivor.csv', './puzzle/2.html', 'Panama, Fiji, Philippines', 1, 'AIzaSyA0oD5trz09rmpopMLmHfyn-mtTbh3dsqk')
   # Answer: Indonesia (+62)
   to_array('data/un.csv', './puzzle/3.html', 'Cambodia', 2, 'AIzaSyDGWjCK3Q6MLTfnMinDULYkSUXTn5D8GR4') # Needs own key
-  # Answer: Italy (+39)
+  # Answer: The Netherlands (+31)
   to_array('data/olympics.csv', './puzzle/4.html', 'United Kingdom, Brazil', 1, 'AIzaSyDzevghJT_Wy7hwZzy5IB5bKfUBe6k14yI') # Needs own key
   # Answer: Morocco (+212)
   to_array('data/oscars.csv', './puzzle/5.html', 'Iran, France', 3, 'AIzaSyA0oD5trz09rmpopMLmHfyn-mtTbh3dsqk') # Needs own key
@@ -50,9 +52,9 @@ if __name__ == '__main__':
   # Answer: Nicaragua (+505)
   to_array('data/mountains.csv', './puzzle/7.html', 'China, Bhutan', 4, 'AIzaSyDke9m-rn4eIK-v39ah-RliNTfp-Zw0UGg')
   # Answer: Norway (+47)
-  to_array('data/letters.csv', './puzzle/8.html', 'Mali, Bolivia', 1, 'AIzaSyA5pwIIpyL6u9kuOVs0i_KXitv65toze5c')
+  to_array('data/letters.csv', './puzzle/8.html', 'Mali, Denmark', 1, 'AIzaSyA5pwIIpyL6u9kuOVs0i_KXitv65toze5c')
   # Answer: Pakistan (+92)
-  to_array('data/timezones.csv', './puzzle/9.html', 'Australia, Ecuador', 8, 'AIzaSyD2kUuTMcnK0Vh41G-MMpTDIzV4sk9oTCo')
+  to_array('data/timezones.csv', './puzzle/9.html', 'United Kingdom, Ecuador', 8, 'AIzaSyD2kUuTMcnK0Vh41G-MMpTDIzV4sk9oTCo')
   # Answer: Paraguay (+595)
   to_array('data/nobels.csv', './puzzle/10.html', 'Argentina, China, Ukraine', 2, 'AIzaSyCDB45ZVFNENiV2bUO92tzHO095stqd7F8')
   # Answer: Republic of the Congo (+242)
