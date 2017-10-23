@@ -16,8 +16,8 @@
             ['Country', 'Index', 'Letter'],
             ['IS', 1, 'I'],
             ['NO', 1, 'N'],
-            ['IT', 2, 'T'],
-            ['KR', 9, 'E'],
+            ['NL', 2, 'T'],
+            ['RS', 9, 'E'],
             ['MA', 3, 'R'],
             ['PK', 8, 'N'],
             ['NI', 4, 'A'],
@@ -25,7 +25,7 @@
             ['LK', 3, 'I'],
             ['CG', 9, 'O'],
             ['ID', 2, 'N'],
-            ['PY', 2, 'A'],
+            ['AR', 2, 'A'],
             ['NZ', 7, 'L'],
           ];
           var data = google.visualization.arrayToDataTable(generated_array);
@@ -36,6 +36,14 @@
           var container = document.getElementById('regions_div');
           var geomap = new google.visualization.GeoMap(container);
   
+          google.visualization.events.addListener(geomap, 'error', function(event) {
+            console.log('Error loading:', event.message);
+          });
+
+          google.visualization.events.addListener(geomap, 'ready', function() {
+            console.log('Done loading');
+          });
+
           geomap.draw(data, options);
         };
       </script>
