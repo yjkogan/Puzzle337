@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      /* Safari 4.0 - 8.0 */
+      @-webkit-keyframes textcolorred {
+          from {color: black;}
+          to {color: red;}
+      }
+      
+      /* Standard syntax */
+      @keyframes textcolorred {
+          from {color: black;}
+          to {color: red;}
+      }
+
+      #Loading-info {
+        -webkit-animation-name: textcolorred; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+        -webkit-animation-iteration-count:infinite;
+        animation-name: textcolorred;
+        animation-duration: 1s;
+        animation-iteration-count:infinite;
+      }
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geomap'],
+        'mapsApiKey': 'AIzaSyD7L4w39LZ22obci_jIoZ5iT-DoccCtrw8'
+      });
+      google.charts.setOnLoadCallback(drawMap);
+
+      function drawMap() {
+        var generated_array = [['Country', 'Count'], ['Andorra', 2], ['Antigua and Barbuda', 1], ['Argentina', 2], ['Austria', 2], ['Bahamas', 1], ['Bangladesh', 2], ['Barbados', 2], ['Belize', 1], ['Bolivia', 1], ['Brazil', 1], ['Bulgaria', 1], ['Burundi', 2], ['Central African Republic', 2], ['Chile', 1], ['China', 1], ['Costa Rica', 1], ['Croatia', 2], ['Dominica', 1], ['Ecuador', 1], ['Estonia', 1], ['Finland', 3], ['France', 1], ['Gabon', 1], ['Georgia (Country of)', 1], ['Germany', 2], ['Greece', 1], ['Grenada', 1], ['Guinea-Bissau', 2], ['Guyana', 2], ['Haiti', 4], ['Iceland', 2], ['India', 2], ['Indonesia', 1], ['Ireland', 2], ['Israel', 2], ['Jamaica', 1], ['Kosovo', 1], ['Kyrgyzstan', 1], ['Latvia', 2], ['Liberia', 2], ['Lithuania', 3], ['Macedonia', 1], ['Madagascar', 1], ['Malawi', 1], ['Mali', 1], ['Malta', 2], ['Marshall Islands', 1], ['Mauritius', 2], ['Moldova', 2], ['Mongolia', 2], ['Mozambique', 1], ['Myanmar', 1], ['Namibia', 1], ['Nepal', 1], ['New Zealand', 7], ['Nicaragua', 1], ['Norway', 3], ['Pakistan', 1], ['Panama', 1], ['Peru', 4], ['Philippines', 2], ['Poland', 3], ['Portugal', 1], ['Rwanda', 1], ['Saint Lucia', 1], ['Saint Vincent and the Grenadines', 1], ['San Marino', 16], ['Sao Tome and Pr\xc3\xadncipe', 2], ['Senegal', 2], ['Serbia', 2], ['Singapore', 1], ['Slovakia', 1], ['Slovenia', 1], ['South Africa', 1], ['South Korea', 3], ['Sri Lanka', 3], ['Switzerland', 7], ['Taiwan', 1], ['Thailand', 1], ['The Bahamas', 2], ['Trinidad and Tobago', 1], ['Turkey', 1], ['Ukraine', 1], ['United Kingdom', 2]];
+        var data = google.visualization.arrayToDataTable(generated_array);
+
+        var options = {
+          displayMode: 'markers',
+          colorAxis: {colors: ['#82ff8c', '#00a80d']},
+          sizeAxis: { minSize: 5, maxSize: 12 }
+        };
+
+        var container = document.getElementById('regions_div');
+        var geomap = new google.visualization.GeoChart(container);
+
+        google.visualization.events.addListener(geomap, 'error', function(event) {
+          console.log('Error loading:', event.message);
+        });
+
+        google.visualization.events.addListener(geomap, 'ready', function() {
+          var loadingContainer = document.getElementById('Loading-info');
+          loadingContainer.style.display = "none";
+        });
+
+        geomap.draw(data, options);
+      };
+    </script>
+  </head>
+  <body>
+    <div>AustraliaCanadaDenmark (2)</div>
+    <div id='Loading-info'>Loading map...</div>
+    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      /* Safari 4.0 - 8.0 */
+      @-webkit-keyframes textcolorred {
+          from {color: black;}
+          to {color: red;}
+      }
+      
+      /* Standard syntax */
+      @keyframes textcolorred {
+          from {color: black;}
+          to {color: red;}
+      }
+
+      #Loading-info {
+        -webkit-animation-name: textcolorred; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+        -webkit-animation-iteration-count:infinite;
+        animation-name: textcolorred;
+        animation-duration: 1s;
+        animation-iteration-count:infinite;
+      }
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geomap'],
+        'mapsApiKey': 'AIzaSyA0oD5trz09rmpopMLmHfyn-mtTbh3dsqk'
+      });
+      google.charts.setOnLoadCallback(drawMap);
+
+      function drawMap() {
+        var generated_array = [['Country', 'Count'], ['Algeria', 1], ['Argentina ', 2], ['Austria', 2], ['Bosnia and Herzegovina', 1], ['Canada', 1], ['Czech Republic / Czechoslovakia', 3], ['Denmark ', 3], ['Germany / West Germany', 3], ['Hungary ', 2], ['Italy', 14], ['Ivory Coast', 1], ['Japan ', 4], ['Netherlands ', 3], ['Poland ', 1], ['Russia / Soviet Union', 4], ['South Africa', 1], ['Spain', 4], ['Sweden ', 3], ['Switzerland', 2], ['Taiwan', 1]];
+        var data = google.visualization.arrayToDataTable(generated_array);
+
+        var options = {
+          displayMode: 'markers',
+          colorAxis: {colors: ['#82ff8c', '#00a80d']},
+          sizeAxis: { minSize: 5, maxSize: 12 }
+        };
+
+        var container = document.getElementById('regions_div');
+        var geomap = new google.visualization.GeoChart(container);
+
+        google.visualization.events.addListener(geomap, 'error', function(event) {
+          console.log('Error loading:', event.message);
+        });
+
+        google.visualization.events.addListener(geomap, 'ready', function() {
+          var loadingContainer = document.getElementById('Loading-info');
+          loadingContainer.style.display = "none";
+        });
+
+        geomap.draw(data, options);
+      };
+    </script>
+  </head>
+  <body>
+    <div>IranFrance (3)</div>
+    <div id='Loading-info'>Loading map...</div>
+    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
