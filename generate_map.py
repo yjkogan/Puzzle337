@@ -40,7 +40,7 @@ if __name__ == '__main__':
   # Answer: Argentina (+54)
   to_array('data/billionaires.csv', './puzzle/1.html', 'KazakhstanMonaco', 1, 'AIzaSyCDB45ZVFNENiV2bUO92tzHO095stqd7F8')
   # Answer: Ethiopia (+251)
-  to_array('data/female_leaders.csv', './puzzle/2.html', 'AustraliaCanadaDenmark', 2, 'AIzaSyD7L4w39LZ22obci_jIoZ5iT-DoccCtrw8')
+  to_array('data/reactors.csv', './puzzle/2.html', 'BrazilSwitzerlandArmenia', 2, 'AIzaSyD7L4w39LZ22obci_jIoZ5iT-DoccCtrw8')
   # Answer: Iceland (+354)
   to_array('data/survivor.csv', './puzzle/3.html', 'PanamaFijiPhilippines', 1, 'AIzaSyA0oD5trz09rmpopMLmHfyn-mtTbh3dsqk')
   # Answer: Indonesia (+62)
@@ -57,9 +57,9 @@ if __name__ == '__main__':
   to_array('data/timezones.csv', './puzzle/9.html', 'UnitedKingdomEcuador', 8, 'AIzaSyD2kUuTMcnK0Vh41G-MMpTDIzV4sk9oTCo')
   # Answer: Republic of the Congo (+242)
   to_array('data/worldcup.csv', './puzzle/10.html', 'ArgentinaItalyUruguay', 9, 'AIzaSyDGWjCK3Q6MLTfnMinDULYkSUXTn5D8GR4')
-  # Answer: Servbia (+381)
-  to_array('data/languages.csv', './puzzle/11.html', 'NewZealandNorwayTheNetherlands', 2, 'AIzaSyCDB45ZVFNENiV2bUO92tzHO095stqd7F8') # Needs own key
   # Answer: Sri Lanka (+94)
-  to_array('data/flag_stars.csv', './puzzle/12.html', 'TuvaluNewZealand', 3, 'AIzaSyAqBmcAT2lia1AEt_6VvvOqydE8rQ8rlpc')
+  to_array('data/flag_stars.csv', './puzzle/11.html', 'TuvaluNewZealand', 3, 'AIzaSyAqBmcAT2lia1AEt_6VvvOqydE8rQ8rlpc')
+  # Answer: Switzerland (+41)
+  to_array('data/female_leaders.csv', './puzzle/12.html', 'PeruRwanda', 2, 'AIzaSyCDB45ZVFNENiV2bUO92tzHO095stqd7F8') # Needs own key
   # Answer: The Netherlands (+31)
   to_array('data/olympics.csv', './puzzle/13.html', 'UnitedKingdomBrazil', 1, 'AIzaSyDzevghJT_Wy7hwZzy5IB5bKfUBe6k14yI') # Needs own key

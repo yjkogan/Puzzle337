@@ -12,22 +12,7 @@
         google.charts.setOnLoadCallback(drawMap);
   
         function drawMap() {
-          var generated_array = [
-            ['Country', 'Index', 'Letter'],
-            ['IS', 1, 'I'],
-            ['NO', 1, 'N'],
-            ['NL', 1, 'T'],
-            ['CH', 1, 'E'],
-            ['MA', 1, 'R'],
-            ['PK', 1, 'N'],
-            ['NI', 1, 'A'],
-            ['ET', 1, 'T'],
-            ['LK', 1, 'I'],
-            ['CG', 1, 'O'],
-            ['ID', 1, 'N'],
-            ['AR', 1, 'A'],
-            ['NZ', 1, 'L'],
-          ];
+          var generated_array = [['Country', 'Index', 'Letter'], ['', 5, 'I']];
           var data = google.visualization.arrayToDataTable(generated_array);
   
           var options = {showLegend: false};
