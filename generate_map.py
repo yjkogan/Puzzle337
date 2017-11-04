@@ -60,6 +60,6 @@ if __name__ == '__main__':
   # Answer: Sri Lanka (+94)
   to_array('data/flag_stars.csv', './puzzle/11.html', 'TuvaluNewZealand', 3, 'AIzaSyAqBmcAT2lia1AEt_6VvvOqydE8rQ8rlpc')
   # Answer: Switzerland (+41)
-  to_array('data/female_leaders.csv', './puzzle/12.html', 'PeruRwanda', 2, 'AIzaSyCDB45ZVFNENiV2bUO92tzHO095stqd7F8') # Needs own key
+  to_array('data/female_leaders.csv', './puzzle/12.html', 'PeruRwanda', 6, 'AIzaSyCDB45ZVFNENiV2bUO92tzHO095stqd7F8') # Needs own key
   # Answer: The Netherlands (+31)
   to_array('data/olympics.csv', './puzzle/13.html', 'UnitedKingdomBrazil', 1, 'AIzaSyDzevghJT_Wy7hwZzy5IB5bKfUBe6k14yI') # Needs own key
