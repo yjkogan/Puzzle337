@@ -49,17 +49,17 @@ if __name__ == '__main__':
   to_array('data/un.csv', './puzzle/5.html', 'Cambodia', 2, 'AIzaSyDGWjCK3Q6MLTfnMinDULYkSUXTn5D8GR4') # Needs own key
   # Answer: Morocco (+212)
   to_array('data/oscars.csv', './puzzle/6.html', 'IranFrance', 3, 'AIzaSyA0oD5trz09rmpopMLmHfyn-mtTbh3dsqk') # Needs own key
+  # Answer: Netherlands (+31)
+  to_array('data/olympics.csv', './puzzle/7.html', 'UnitedKingdomBrazil', 3, 'AIzaSyDzevghJT_Wy7hwZzy5IB5bKfUBe6k14yI') # Needs own key
   # Answer: New Zealand (+64)
-  to_array('data/worlds50best.csv', './puzzle/7.html', 'SpainItaly', 7, 'AIzaSyDzevghJT_Wy7hwZzy5IB5bKfUBe6k14yI')
+  to_array('data/worlds50best.csv', './puzzle/8.html', 'SpainItaly', 7, 'AIzaSyDzevghJT_Wy7hwZzy5IB5bKfUBe6k14yI')
   # Answer: Nicaragua (+505)
-  to_array('data/mountains.csv', './puzzle/8.html', 'ChinaBhutan', 4, 'AIzaSyDke9m-rn4eIK-v39ah-RliNTfp-Zw0UGg')
+  to_array('data/mountains.csv', './puzzle/9.html', 'ChinaBhutan', 4, 'AIzaSyDke9m-rn4eIK-v39ah-RliNTfp-Zw0UGg')
   # Answer: Pakistan (+92)
-  to_array('data/timezones.csv', './puzzle/9.html', 'UnitedKingdomEcuador', 8, 'AIzaSyD2kUuTMcnK0Vh41G-MMpTDIzV4sk9oTCo')
+  to_array('data/timezones.csv', './puzzle/10.html', 'UnitedKingdomEcuador', 8, 'AIzaSyD2kUuTMcnK0Vh41G-MMpTDIzV4sk9oTCo')
   # Answer: Republic of the Congo (+242)
-  to_array('data/worldcup.csv', './puzzle/10.html', 'ArgentinaItalyUruguay', 9, 'AIzaSyDGWjCK3Q6MLTfnMinDULYkSUXTn5D8GR4')
+  to_array('data/worldcup.csv', './puzzle/11.html', 'ArgentinaItalyUruguay', 9, 'AIzaSyDGWjCK3Q6MLTfnMinDULYkSUXTn5D8GR4')
   # Answer: Sri Lanka (+94)
-  to_array('data/flag_stars.csv', './puzzle/11.html', 'TuvaluNewZealand', 3, 'AIzaSyAqBmcAT2lia1AEt_6VvvOqydE8rQ8rlpc')
+  to_array('data/flag_stars.csv', './puzzle/12.html', 'TuvaluNewZealand', 3, 'AIzaSyAqBmcAT2lia1AEt_6VvvOqydE8rQ8rlpc')
   # Answer: Switzerland (+41)
-  to_array('data/female_leaders.csv', './puzzle/12.html', 'PeruRwanda', 6, 'AIzaSyCDB45ZVFNENiV2bUO92tzHO095stqd7F8') # Needs own key
-  # Answer: The Netherlands (+31)
-  to_array('data/olympics.csv', './puzzle/13.html', 'UnitedKingdomBrazil', 1, 'AIzaSyDzevghJT_Wy7hwZzy5IB5bKfUBe6k14yI') # Needs own key
+  to_array('data/female_leaders.csv', './puzzle/13.html', 'PeruRwanda', 6, 'AIzaSyCDB45ZVFNENiV2bUO92tzHO095stqd7F8') # Needs own key
