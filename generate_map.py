@@ -7,7 +7,7 @@ import plotly.plotly as py
 import pandas as pd
 from string import Template
 
-plotly.tools.set_credentials_file(username='yjkogan-harvard', api_key='7LpTZktpFhracINiPiEk')
+# plotly.tools.set_credentials_file(username='yjkogan-harvard', api_key='7LpTZktpFhracINiPiEk')
 
 country_to_lat_long = {}
 results = []
@@ -54,7 +54,7 @@ def plot_map(in_file, out_file, order, index, api_key):
               sizemode = 'diameter',
               line = dict(width=0.5, color='rgb(40,40,40)'),
           ),
-          name = '{0} - {1}'.format(min_count, max_count)
+          name = 'Range: {0} - {1}'.format(min_count, max_count)
           )
 
   layout = dict(
@@ -65,12 +65,19 @@ def plot_map(in_file, out_file, order, index, api_key):
       b = 70,
       pad = 0,
     ),
-    title = '{0} ({1}) <br /> Range: {2}-{3}'.format(order, index, min_count, max_count),
-    showlegend = False,
+    title = '{0} ({1})'.format(order, index),
+    legend=dict(
+      bgcolor='#EAF7FE',
+      x=0.5,
+      y=0,
+    ),
+    showlegend = True,
     geo = dict(
         lataxis = dict(
           range = [-5, 90],
         ),
+        coastlinecolor = 'rgba(68, 68, 68, 0.2)',
+        countrycolor = 'rgba(68, 68, 68, 0.2)',
         landcolor = '#F9FFEE',
         oceancolor = '#EAF7FE',
         scope='world',
@@ -84,6 +91,7 @@ def plot_map(in_file, out_file, order, index, api_key):
 
   fig = dict( data=[country], layout=layout )
   out_file_name = out_file.replace('./', '').replace('/', '')
+  # result = py.image.save_as(fig, filename=out_file_name)
   results.append(py.plot( fig, validate=False, filename=out_file_name ))
 
 if __name__ == '__main__':
@@ -126,6 +134,6 @@ if __name__ == '__main__':
     with open('index.html', 'w+') as o:
       substitution_dict = {}
       for i in range(len(results)):
-        substitution_dict['puzzle' + str(i + 1)] = results[i] + '.embed'
+        substitution_dict['puzzle' + str(i + 1)] = results[i] + '.embed?link=false'
       print substitution_dict
       o.write(src.substitute(substitution_dict))
