@@ -90,9 +90,7 @@ def plot_map(in_file, out_file, order, index, api_key):
   )
 
   fig = dict( data=[country], layout=layout )
-  out_file_name = out_file.replace('./', '').replace('/', '')
-  # result = py.image.save_as(fig, filename=out_file_name)
-  results.append(py.plot( fig, validate=False, filename=out_file_name ))
+  results.append(py.plot( fig, validate=False, filename=out_file ))
 
 if __name__ == '__main__':
   lat_lng_file = 'lat_lngs.csv'
@@ -102,31 +100,31 @@ if __name__ == '__main__':
       country_to_lat_long[c['Country']] = c
 
   # Answer: Argentina (+54)
-  plot_map('data/billionaires.csv', './puzzle/1.html', 'KazakhstanMonaco', 1, 'AIzaSyCDB45ZVFNENiV2bUO92tzHO095stqd7F8')
+  plot_map('data/billionaires.csv', 'thing1', 'KazakhstanMonaco', 1, 'AIzaSyCDB45ZVFNENiV2bUO92tzHO095stqd7F8')
   # Answer: Denmark (+45)
-  plot_map('data/letters.csv', './puzzle/2.html', 'UnitedKingdom', 3, 'AIzaSyA5pwIIpyL6u9kuOVs0i_KXitv65toze5c')
+  plot_map('data/letters.csv', 'thing2', 'UnitedKingdom', 3, 'AIzaSyA5pwIIpyL6u9kuOVs0i_KXitv65toze5c')
   # Answer: Ethiopia (+251)
-  plot_map('data/reactors.csv', './puzzle/3.html', 'BrazilSwitzerlandArmenia', 2, 'AIzaSyD7L4w39LZ22obci_jIoZ5iT-DoccCtrw8')
+  plot_map('data/reactors.csv', 'thing3', 'BrazilSwitzerlandArmenia', 2, 'AIzaSyD7L4w39LZ22obci_jIoZ5iT-DoccCtrw8')
   # Answer: Iceland (+354)
-  plot_map('data/survivor.csv', './puzzle/4.html', 'PanamaFijiPhilippines', 1, 'AIzaSyA0oD5trz09rmpopMLmHfyn-mtTbh3dsqk')
+  plot_map('data/survivor.csv', 'thing4', 'PanamaFijiPhilippines', 1, 'AIzaSyA0oD5trz09rmpopMLmHfyn-mtTbh3dsqk')
   # Answer: Indonesia (+62)
-  plot_map('data/un.csv', './puzzle/5.html', 'Cambodia', 2, 'AIzaSyDGWjCK3Q6MLTfnMinDULYkSUXTn5D8GR4') # Needs own key
+  plot_map('data/un.csv', 'thing5', 'Cambodia', 2, 'AIzaSyDGWjCK3Q6MLTfnMinDULYkSUXTn5D8GR4') # Needs own key
   # Answer: Morocco (+212)
-  plot_map('data/oscars.csv', './puzzle/6.html', 'IranFrance', 3, 'AIzaSyA0oD5trz09rmpopMLmHfyn-mtTbh3dsqk') # Needs own key
+  plot_map('data/oscars.csv', 'thing6', 'IranFrance', 3, 'AIzaSyA0oD5trz09rmpopMLmHfyn-mtTbh3dsqk') # Needs own key
   # Answer: Netherlands (+31)
-  plot_map('data/olympics.csv', './puzzle/7.html', 'UnitedKingdomBrazil', 3, 'AIzaSyDzevghJT_Wy7hwZzy5IB5bKfUBe6k14yI') # Needs own key
+  plot_map('data/olympics.csv', 'thing7', 'UnitedKingdomBrazil', 3, 'AIzaSyDzevghJT_Wy7hwZzy5IB5bKfUBe6k14yI') # Needs own key
   # Answer: New Zealand (+64)
-  plot_map('data/worlds50best.csv', './puzzle/8.html', 'SpainItaly', 7, 'AIzaSyDzevghJT_Wy7hwZzy5IB5bKfUBe6k14yI')
+  plot_map('data/worlds50best.csv', 'thing8', 'SpainItaly', 7, 'AIzaSyDzevghJT_Wy7hwZzy5IB5bKfUBe6k14yI')
   # Answer: Nicaragua (+505)
-  plot_map('data/mountains.csv', './puzzle/9.html', 'ChinaBhutan', 4, 'AIzaSyDke9m-rn4eIK-v39ah-RliNTfp-Zw0UGg')
+  plot_map('data/mountains.csv', 'thing9', 'ChinaBhutan', 4, 'AIzaSyDke9m-rn4eIK-v39ah-RliNTfp-Zw0UGg')
   # Answer: Pakistan (+92)
-  plot_map('data/timezones.csv', './puzzle/10.html', 'UnitedKingdomEcuador', 8, 'AIzaSyD2kUuTMcnK0Vh41G-MMpTDIzV4sk9oTCo')
+  plot_map('data/timezones.csv', 'thing10', 'UnitedKingdomEcuador', 8, 'AIzaSyD2kUuTMcnK0Vh41G-MMpTDIzV4sk9oTCo')
   # Answer: Republic of the Congo (+242)
-  plot_map('data/worldcup.csv', './puzzle/11.html', 'ArgentinaItalyUruguay', 9, 'AIzaSyDGWjCK3Q6MLTfnMinDULYkSUXTn5D8GR4')
+  plot_map('data/worldcup.csv', 'thing11', 'ArgentinaItalyUruguay', 9, 'AIzaSyDGWjCK3Q6MLTfnMinDULYkSUXTn5D8GR4')
   # Answer: Sri Lanka (+94)
-  plot_map('data/flag_stars.csv', './puzzle/12.html', 'TuvaluNewZealand', 3, 'AIzaSyAqBmcAT2lia1AEt_6VvvOqydE8rQ8rlpc')
+  plot_map('data/flag_stars.csv', 'thing12', 'TuvaluNewZealand', 3, 'AIzaSyAqBmcAT2lia1AEt_6VvvOqydE8rQ8rlpc')
   # Answer: Switzerland (+41)
-  plot_map('data/female_leaders.csv', './puzzle/13.html', 'PeruRwanda', 6, 'AIzaSyCDB45ZVFNENiV2bUO92tzHO095stqd7F8') # Needs own key
+  plot_map('data/female_leaders.csv', 'thing13', 'PeruRwanda', 6, 'AIzaSyCDB45ZVFNENiV2bUO92tzHO095stqd7F8') # Needs own key
 
   template_file = 'plotly_template.html'
   with open(template_file, 'r') as t:
