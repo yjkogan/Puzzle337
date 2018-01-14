@@ -7,7 +7,7 @@ import plotly.plotly as py
 import pandas as pd
 from string import Template
 
-# plotly.tools.set_credentials_file(username='mit-head-hunters', api_key='DpxA8zG3BluWvIOVm3ZH')
+plotly.tools.set_credentials_file(username='yjkogan-harvard', api_key='Ckwoq8tnyuDUI0V3RmQ2')
 
 country_to_lat_long = {}
 results = []
